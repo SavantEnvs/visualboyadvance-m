@@ -1,0 +1,11 @@
+# Mayhem target: fuzz_archive
+project: savantenvs/visualboyadvance-m
+target: fuzz_archive
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_archive/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_archive
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_archive/fuzz_archive.dict
+    timeout: 60

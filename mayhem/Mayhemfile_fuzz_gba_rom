@@ -1,0 +1,11 @@
+# Mayhem target: fuzz_gba_rom
+project: savantenvs/visualboyadvance-m
+target: fuzz_gba_rom
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_gba_rom/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_gba_rom
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_gba_rom/fuzz_gba_rom.dict
+    timeout: 60
