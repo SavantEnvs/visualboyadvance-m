@@ -1,0 +1,11 @@
+# Mayhem target: fuzz_gba_state
+project: savantenvs/visualboyadvance-m
+target: fuzz_gba_state
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_gba_state/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_gba_state
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_gba_state/fuzz_gba_state.dict
+    timeout: 60
